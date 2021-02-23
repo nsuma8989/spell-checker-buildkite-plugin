@@ -1,11 +1,8 @@
 #!/bin/bash
 set -euo pipefail
-
-
-
-echo "Running spell check on ${#files[@]} files"
-if docker run --rm -v "$PWD:/mnt" --workdir "/mnt" "starefossen/aspell:latest" "${files[@]}" ; then
-  echo "No spelling errors in the files"
+echo "Running spell check on files"
+if docker run --rm -v "$PWD:/workdir" "tmaier/markdown-spellcheck:latest" --report "${files[@]}" ; then
+  echo "Spelling errors in the file ${#files[@]}"
 else
   exit 1
 fi
