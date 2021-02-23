@@ -1,0 +1,12 @@
+name: spell-check
+description: Run spell check over your files in docker image
+author: https://github.com/lox
+requirements:
+  - docker
+configuration:
+  properties:
+    files:
+      type: [string, array]
+      minItems: 1
+  required:
+    - files
