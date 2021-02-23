@@ -1,6 +1,6 @@
 name: spell-check
 description: Run spell check over your files in docker image
-author: https://github.com/lox
+author: https://github.com/nsuma8989
 requirements:
   - docker
 configuration:
