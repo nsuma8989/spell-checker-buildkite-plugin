@@ -1,0 +1,16 @@
+steps:
+  - label: run tests
+    plugins:
+      - docker-compose#v3.3.0:
+          run: tests
+
+  - label: run spell check
+    plugins:
+      - nsuma8989/spell-check#v1.0.0:
+          files:
+            - README.md
+
+  - label: "plugin lint"
+    plugins:
+      - plugin-linter#v2.0.0:
+          id: nsuma8989/spell-check#v1.0.0
