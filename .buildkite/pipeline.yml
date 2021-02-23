@@ -6,11 +6,11 @@ steps:
 
   - label: run spell check
     plugins:
-      - nsuma8989/spell-check#v1.0.0:
+      - nsuma8989/spell-check#v1.0.1:
           files:
             - README.md
 
   - label: "plugin lint"
     plugins:
       - plugin-linter#v2.0.0:
-          id: nsuma8989/spell-check#v1.0.0
+          id: nsuma8989/spell-check#v1.0.1

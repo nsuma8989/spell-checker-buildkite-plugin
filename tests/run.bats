@@ -6,13 +6,13 @@ load '/usr/local/lib/bats/load.bash'
   export BUILDKITE_PLUGIN_SPELL_CHECK_FILES_0="tests/test.md"
 
   stub docker \
-    "run --rm -v $PWD:/workdir tmaier/markdown-spellcheck:latest --report /workdir/tests/test.md : echo spelling errors found in file test.md"
+    "run --rm -v $PWD:/workdir tmaier/markdown-spellcheck:latest --report /workdir/tests/test.md : echo spelling errors found in file"
 
   run "$PWD/hooks/command"
 
   assert_success
   assert_output --partial "Running spell check on file"
-  assert_output --partial "spelling errors found in file test.md"
+  assert_output --partial "spelling errors found in file"
 
   unstub docker
  }

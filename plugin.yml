@@ -1,12 +1,10 @@
 name: spell-check
 description: Run spell check over your files in docker image
 author: https://github.com/nsuma8989
-requirements:
-  - docker
+requirements: []
 configuration:
   properties:
     files:
-      type: [string, array]
-      minItems: 1
+      type: string
   required:
     - files
